@@ -1,0 +1,90 @@
+/* ============================================================
+   base.css — Variables CSS, reset global, typographie
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --deep-space:      #03020d;
+  --nebula-purple:   #1a0533;
+  --violet:          #6b21a8;
+  --cosmic-blue:     #0d2060;
+  --star-gold:       #fcd34d;
+  --nova-orange:     #f97316;
+  --luma-white:      #f0e6ff;
+  --rosalina-teal:   #2dd4bf;
+  --accent-pink:     #e879f9;
+  --text-dim:        #a78bfa;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--deep-space);
+  color: var(--luma-white);
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── Typographie générale ───────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.ext-link {
+  color: var(--rosalina-teal);
+  border-bottom: 1px dotted #2dd4bf44;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+a.ext-link:hover {
+  color: var(--star-gold);
+  border-color: #fcd34d88;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ── Tooltip ────────────────────────────────────────────────── */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted var(--star-gold);
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a0533ee;
+  border: 1px solid #6b21a866;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  color: var(--luma-white);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 50;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+}

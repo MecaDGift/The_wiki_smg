@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⭐ Mario Galaxy — Wiki Galactique</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-bar"></div>
+
+  <!-- Background layers -->
+  <div class="nebula"></div>
+  <div id="starfield"></div>
+
+  <!-- Konami Easter Egg Overlay -->
+  <div id="konami-overlay">
+    <div style="font-size:4rem">⭐🌟✨💫⭐🌟✨💫</div>
+    <div class="konami-text">POWER STAR OBTENUE !<br>Tu as trouvé l'Easter Egg 🏆</div>
+    <div class="konami-sub">
+      ↑↑↓↓←→←→BA — Le code Konami, hommage aux jeux Nintendo depuis 1986.<br>
+      Rosalina est fière de toi, petit Luma ! ⭐
+    </div>
+    <button class="konami-close" onclick="closeKonami()">Retourner dans la galaxie</button>
+  </div>
+
+  <!-- Site wrapper -->
+  <div class="site-wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="planet-deco planet-1"></div>
+      <div class="planet-deco planet-2"></div>
+      <div class="header-badge">🌌 Wiki Galactique Officieux</div>
+      <h1 class="site-title">MARIO<br>GALAXY</h1>
+      <p class="site-subtitle">L'univers complet • Jeux & Film 2026</p>
+    </header>
+
+    <!-- Countdown Banner -->
+    <div style="padding:0 20px;">
+      <div class="countdown-banner">
+        <div class="countdown-label">🎬 Compte à rebours</div>
+        <div class="countdown-title">Super Mario Galaxy — Le Film</div>
+        <div class="countdown-subtitle">Sortie en France le 1er avril 2026</div>
+        <div class="countdown-digits">
+          <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><div class="cd-label">Heures</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><div class="cd-label">Min</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><div class="cd-label">Sec</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+      <div class="nav-tabs" id="navTabs">
+        <button class="tab-btn active" onclick="showTab('accueil', this)"><span class="tab-icon">🏠</span>Accueil</button>
+        <button class="tab-btn" onclick="showTab('jeux', this)"><span class="tab-icon">🎮</span>Les Jeux</button>
+        <button class="tab-btn" onclick="showTab('galaxies', this)"><span class="tab-icon">🌌</span>Galaxies</button>
+        <button class="tab-btn" onclick="showTab('personnages', this)"><span class="tab-icon">⭐</span>Personnages</button>
+        <button class="tab-btn" onclick="showTab('ennemis', this)"><span class="tab-icon">👾</span>Ennemis</button>
+        <button class="tab-btn" onclick="showTab('film', this)"><span class="tab-icon">🎬</span>Le Film</button>
+        <button class="tab-btn" onclick="showTab('secrets', this)"><span class="tab-icon">🔍</span>Secrets</button>
+      </div>
+    </nav>
+
+    <!-- Tab Sections (loaded from separate HTML partials via JS) -->
+    <div id="sections-container">
+      <!-- Injected by js/sections.js -->
+    </div>
+
+  </div><!-- .site-wrapper -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-title">⭐ Mario Galaxy Wiki Galactique</div>
+    <div>Site fan non officiel • Contenu en construction</div>
+    <div>Nintendo, Mario et tous les personnages associés sont la propriété de Nintendo Co., Ltd.</div>
+    <div>Film produit par Illumination & Universal Pictures © 2025–2026</div>
+    <div class="easter-hint" title="Tu as trouvé quelque chose...">· · · · ·</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/starfield.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/konami.js"></script>
+  <script src="js/sections.js"></script>
+
+</body>
+</html>

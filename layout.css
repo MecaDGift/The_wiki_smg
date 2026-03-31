@@ -1,0 +1,232 @@
+/* ============================================================
+   layout.css — Structure générale, header, nav, footer
+   ============================================================ */
+
+/* ── Background layers ──────────────────────────────────────── */
+.nebula {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, #1a053388 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 70%, #0d206088 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, #6b21a822 0%, transparent 60%);
+  pointer-events: none;
+}
+
+#starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* ── Scroll progress bar ────────────────────────────────────── */
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fcd34d, #f97316, #e879f9);
+  z-index: 200;
+  width: 0%;
+  box-shadow: 0 0 8px #fcd34d88;
+  transition: width 0.1s;
+}
+
+/* ── Site wrapper ───────────────────────────────────────────── */
+.site-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+header {
+  text-align: center;
+  padding: 60px 20px 30px;
+  position: relative;
+}
+
+.header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #fcd34d22, #f9731622);
+  border: 1px solid #fcd34d44;
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--star-gold);
+  margin-bottom: 20px;
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+.site-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  background: linear-gradient(135deg, #fcd34d 0%, #f97316 30%, #e879f9 60%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 30px #fcd34d55);
+  animation: title-glow 4s ease-in-out infinite;
+}
+
+.site-subtitle {
+  font-size: 1rem;
+  color: var(--text-dim);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+/* ── Nav bar ────────────────────────────────────────────────── */
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, #03020dee, #03020dbb);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #6b21a833;
+  padding: 0 20px;
+}
+
+.nav-tabs {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 18px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--star-gold), var(--nova-orange));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-btn:hover        { color: var(--luma-white); }
+.tab-btn.active       { color: var(--star-gold); }
+.tab-btn.active::after { transform: scaleX(1); }
+
+.tab-icon {
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+/* ── Sections ───────────────────────────────────────────────── */
+.section {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px 80px;
+  animation: section-in 0.5s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+.section-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rosalina-teal);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--luma-white);
+  margin-bottom: 15px;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #6b21a822;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  line-height: 2;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--luma-white);
+  margin-bottom: 8px;
+}
+
+.easter-hint {
+  margin-top: 20px;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #6b21a866;
+  transition: color 0.5s;
+  cursor: default;
+  user-select: none;
+}
+
+.easter-hint:hover {
+  color: #6b21a8bb;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .planet-1,
+  .planet-2 { display: none; }
+
+  .tab-btn {
+    padding: 16px 12px;
+    font-size: 0.55rem;
+  }
+}
